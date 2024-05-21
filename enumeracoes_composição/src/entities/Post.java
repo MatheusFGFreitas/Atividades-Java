@@ -7,26 +7,27 @@ import java.util.List;
 
 public class Post {
 	
-	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
-
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); //formatando a data em
+																					//dia mes ano hora min seg
+																					//para o programa principal
 	private Date moment;
 	private String title;
 	private String content;
 	private Integer likes;
 	
-	private List<Comment> comments = new ArrayList<>();
+	private List<Comment> comments = new ArrayList<>(); //criado um ArrayList para List
 	
-	public Post() {	
+	public Post() {	//criado argumento em branco
 	}
 
-	public Post(Date moment, String title, String content, Integer likes) {
-		this.moment = moment;
+	public Post(Date moment, String title, String content, Integer likes) {//criado generate using fields
+		this.moment = moment;											//porém não colocado List no construtor
 		this.title = title;
 		this.content = content;
 		this.likes = likes;
 	}
 
-	public Date getMoment() {
+	public Date getMoment() {//getters and setters
 		return moment;
 	}
 
@@ -62,6 +63,11 @@ public class Post {
 		return comments;
 	}
 	
+	//public void setComments(List<Comment> comments){
+		//this.comments = comments;
+	//}
+	//não se pode ter um metodo que recebe outra lista pra trocar a lista, então é apagado e utilizado o add e remove
+	
 	public void addComment(Comment comment) {
 		comments.add(comment);
 	}
@@ -70,18 +76,19 @@ public class Post {
 		comments.remove(comment);
 	}
 	
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(title + "\n");
+	public String toString() { //feito um toString
+		StringBuilder sb = new StringBuilder(); //porem utilizado um StringBuilder para não ficar pesado o programa
+												//e mais facilitado a inserção
+		sb.append(title + "\n"); //sb.append seria mais uma parte adicionada no toString
 		sb.append(likes);
 		sb.append(" Likes - ");
 		sb.append(sdf.format(moment) + "\n");
 		sb.append(content + "\n");
 		sb.append("comments: \n");
-		for (Comment c : comments) {
+		for (Comment c : comments) { //criado um laço de repetição para cada comentário inserido
 			sb.append(c.getText() + "\n");
 		}
-		return sb.toString();
+		return sb.toString(); //para retornar ao programa principal formatado como toString
 	}
 	
 }
