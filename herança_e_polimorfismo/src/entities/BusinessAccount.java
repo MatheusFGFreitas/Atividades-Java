@@ -28,6 +28,9 @@ public class BusinessAccount extends Account{ //só com o extends já mostra ao 
 			}
 		}
 		
-		
-		
+		@Override 
+		public void withdraw(double amount) {//esse é para o Business account, onde:
+			super.withdraw(amount);//é chamado o withdraw do Account normal, que é retirado 5 de taxa
+			balance -= 2.0;//e é adicionado mais 2 reias em taxa pois a conta é empresarial
+		}
 }
