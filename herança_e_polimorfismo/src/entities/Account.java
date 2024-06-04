@@ -41,7 +41,7 @@ public class Account {
 		//}
 		
 		public void withdraw(double amount) { // criado argumento para retirada de dinheiro
-			balance -= amount;
+			balance -= amount + 5.0;
 		}
 		
 		public void deposit(double amount) { // criado argumento para deposito de dinheiro
