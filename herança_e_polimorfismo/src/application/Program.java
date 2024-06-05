@@ -4,7 +4,7 @@ import entities.Account;
 import entities.BusinessAccount;
 import entities.SavingsAccount;
 
-public class Program { //utiliza Account e BusinessAccount
+public class Program { //utiliza Account, BusinessAccount e SavingsAccount
 
 	public static void main(String[] args) {
 
