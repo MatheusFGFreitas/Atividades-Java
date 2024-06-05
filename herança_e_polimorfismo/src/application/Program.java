@@ -37,6 +37,20 @@ public class Program { //utiliza Account e BusinessAccount
 			System.out.println("Update!");//e é imprimido o resultado
 		}//caso não seja, é ignorado o resultado
 		//esses dois testes são otimos para caso a conta seja instanciada, e facilita para não ocorrer erros durante a compilação
+		
+		//Polimorfismo: polimorfismo significa muitas formas, igual os exemplos abaixo, o que acontece neles é:
+		Account x = new Account(1020, "Alex", 1000.0);//quando eu chamo essa linha, eu executo o saque da classe account
+		Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);//quando eu chamo essa linha, eu executo o saque da classe savings account
+		//o que acontece é que existe a mesma operação nos dois lugares, tanto no account quanto savingsaccount
+		//então ele fará o withdraw condizente ao nivel da conta, de forma resumida, deixando mais facil ao programador
+		//para fazer a operação, a atribuição da variavel é feito em tempo de execução, ou seja, só saberá durante
+		//a hora da execução.
+		
+		x.withdraw(50.0);
+		y.withdraw(50.0);
+		
+		System.out.println(x.getBalance());
+		System.out.println(y.getBalance());
 	}
 
 }
