@@ -1,6 +1,7 @@
 package entities;
 
-public class Account {
+public class Account {//se eu usar o abstract entre o public class, a classe não poderá ser instanciada
+						//logo isso previnirá erros de programadores, pois não deixará compliar a classe
 
 		private Integer number;
 		private String holder;
