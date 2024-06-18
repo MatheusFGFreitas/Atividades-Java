@@ -36,9 +36,17 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);//transformando milisegundos em dias para ser retornado
 	}
 	
-	public void updateDates(Date checkIn, Date checkOut) {//esse metodo fará o checkIn do objeto receber o que vem do argumento
+	public String updateDates(Date checkIn, Date checkOut) {//esse metodo fará o checkIn do objeto receber o que vem do argumento
+		Date now = new Date();
+		if(checkIn.before(now) || checkOut.before(now)) {//atualizado com os if que estavam no programa principal
+			return "Erro na reserva: data de reserva devem ser atualizados para datas futuras";
+		}
+		if(!checkOut.after(checkIn)) {
+			return "Erro em reserva, a data de check-out deve ser após a data de check-in";
+		}
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
+		return null;
 	}
 	
 	@Override
