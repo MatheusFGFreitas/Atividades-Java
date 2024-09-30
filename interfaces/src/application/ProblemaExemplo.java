@@ -35,6 +35,8 @@ public class ProblemaExemplo {
 		double pricePerDay = sc.nextDouble();
 		
 		RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());//instanciando o rental service já trazendo os dados dos preços
+		//injeção de dependencia por meio de construtor: o objeto BrazilTaxService foi instanciado no programa principal,
+		//e foi injetada no RentalService pelo construtor, assim deixando o acoplamento fraco, para facil modificação do codigo
 		
 		rentalService.processInvoice(cr);//este metodo está instanciando uma invoice com os dados e associando ela ao car rental
 		
