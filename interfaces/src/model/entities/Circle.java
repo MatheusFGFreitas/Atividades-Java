@@ -2,7 +2,7 @@ package model.entities;
 
 import model.services.Color;
 
-public class Circle extends Shape{
+public class Circle extends AbstractShape{
 	
 	private Double radius;
 	

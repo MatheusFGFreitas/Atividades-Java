@@ -1,22 +1,6 @@
 package model.entities;
 
-import model.services.Color;
-
-public abstract class Shape {
+public interface Shape {//trocado para interface, presumindo que o atributo é abstrato, então todo metodo que é uma figura terá que implementar a operação area
 	
-	private Color color;
-	
-	public Shape(Color color) {
-		this.color = color;
-	}
-	
-	public Color getColor() {
-		return color;
-	}
-	
-	public void setColor(Color color) {
-		this.color = color;
-	}
-	
-	public abstract double area();
+	double area();
 }
