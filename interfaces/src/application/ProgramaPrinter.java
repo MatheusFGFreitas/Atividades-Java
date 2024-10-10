@@ -1,18 +1,30 @@
 package application;
 
-import model.entities.Printer;
-import model.entities.Scanner;
+import model.entities.ComboDevice;
+import model.entities.ConcretePrinter;
+import model.entities.ConcreteScanner;
 
 public class ProgramaPrinter {
 
 	public static void main(String[] args) {
 		
-		Printer p = new Printer("1080");
+		ConcretePrinter p = new ConcretePrinter("1080");
 		p.processDoc("My Letter");
 		p.print("My Letter");
 		
-		Scanner s = new Scanner("2003");
+		System.out.println();
+		ConcreteScanner s = new ConcreteScanner("2003");
 		s.processDoc("My Email");
 		System.out.println("Scan result: " + s.scan());
+		
+		System.out.println();
+		ComboDevice c = new ComboDevice("2081");
+		c.processDoc("My dissertation");
+		c.print("My dissertation");
+		System.out.println("Scan result: " + c.scan());
+		
+		//nessa aula vi que a interface é uma forma de implementar uma classe que pode realizar mais de uma interface
+		//porém não é herança multipla, pois não a reuso na relação entre Combo devide e as interfaces Scanner e Printer
+		//Combo devine não herda, mas sim implementa as interfaces, ou seja, cumpre o contrato
 	}
 }
