@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import model.services.BrazilInterestService;
+import model.services.InterestService;
 import model.services.UsaInterestService;
 
 public class ProgramaDefaultMethods {
@@ -20,7 +20,7 @@ public class ProgramaDefaultMethods {
 		System.out.print("Em quantos meses será o pagamento: ");
 		int months = sc.nextInt();
 		
-		UsaInterestService is = new UsaInterestService(1.0);
+		InterestService is = new UsaInterestService(1.0);
 		double payment = is.payment(amount, months);
 		
 		System.out.println("Pagamento após " + months + "meses: ");
