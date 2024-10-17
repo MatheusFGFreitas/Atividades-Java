@@ -1,7 +1,5 @@
 package model.services;
 
-import java.security.InvalidParameterException;
-
 public class UsaInterestService implements InterestService{
 	
 	private double interestRate;
@@ -13,14 +11,6 @@ public class UsaInterestService implements InterestService{
 	@Override
 	public double getInterestRate() {
 		return interestRate;
-	}
-	
-	@Override
-	public double payment(double amount, int months) {
-		if (months < 1) {
-			throw new InvalidParameterException("A quantidade de meses tem que ser maior que zero");//caso a quantidade de meses for menor que um, o erro é tratado
-		}
-		return amount * Math.pow(1.0 + interestRate / 100.0, months);//quantia * potencia(1 + taxa de juros / 100, meses)
 	}
 
 }
