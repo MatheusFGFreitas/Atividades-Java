@@ -3,6 +3,18 @@
 	<name>Atividades-Java</name>
 	<comment></comment>
 	<projects>
+		<project>curso_programacao</project>
+		<project>curso_programacao_comportamentoDeMemoria_arrays_listas</project>
+		<project>curso_programacao_orientado_a_objetos</project>
+		<project>curso_programacao_orientado_a_objetos_construtores_this_sobrecarga_encapsulamento</project>
+		<project>curso_programacao_orientado_a_objetos_membros_estaticos</project>
+		<project>curso_programacao_orientado_a_objetos_triangulo</project>
+		<project>enumeracoes_composição</project>
+		<project>herança_e_polimorfismo</project>
+		<project>interfaces</project>
+		<project>lendoArquivoTextoComFileEScanner</project>
+		<project>topicos_especiais_em_java_data_hora</project>
+		<project>tratamento_de_exceções</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>
