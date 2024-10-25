@@ -3,15 +3,17 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {//alterado de integer para object
+public class PrintService<T> {//alterado de integer para object
+							  //colocado que o PrintService é do tipo T, o "T" pode ser qualquer letra, contanto que seja utilizada em todos os locais
+							  //graças a isso, a classe ficou parametrizada no tipo T
 	
-	private List<Object> list = new ArrayList<>();
+	private List<T> list = new ArrayList<>();
 	
-	public void addValue(Object value) {
+	public void addValue(T value) {
 		list.add(value);
 	}
 	
-	public Object first() {
+	public T first() {
 		if(list.isEmpty()) {
 			throw new IllegalStateException("A lista está vazia");
 		}
