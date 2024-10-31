@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -49,6 +50,23 @@ public class TipoSet {
 		//set.removeIf irá remover apenas os objetos que satisfazerem algo que vc digitar, por exemplo, para removermos palavras com mais de 3
 		//digitos, o codigo ficaria set.removeIf(x -> x.length() >= 3); ou para remover todos com a letra T, seria: set.removeIf(x -> x.charAt(0) == 'T');
 		
+		Set<Integer> a = new TreeSet<>(Arrays.asList(0,2,4,5,6,8,10));
+		Set<Integer> b = new TreeSet<>(Arrays.asList(5,6,7,8,9,10));
+		
+		//união
+		Set<Integer> c = new TreeSet<>(a);
+		c.addAll(b);//está fazendo a união do conjunto B com o conjunto C
+		System.out.println(c);
+		
+		//elementos em comum
+		Set<Integer> d = new TreeSet<>(a);
+		d.retainAll(b);//tá so chamando os elementos em comum do B e do D
+		System.out.println(d);
+		
+		//diferença
+		Set<Integer> e = new TreeSet<>(a);
+		e.removeAll(b);//vai remover todo mundo do conjunto E que ta no conjunto B
+		System.out.println(e);
 
 	}
 
