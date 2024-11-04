@@ -1,35 +1,27 @@
 package application;
 
-
+import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
+import entities.Product;
 
 public class TipoMap {
 
 	public static void main(String[] args) {
 
-		Map<String, String> cookies = new TreeMap<>();//ordenação em ordem alfabetica
+		Map<Product, Double> stock = new HashMap<>();
 		
-		cookies.put("Username", "Maria");
-		cookies.put("email", "Maria@gmail.com");
-		cookies.put("phone", "997711228");
+		Product p1 = new Product("TV", 900.0);
+		Product p2 = new Product("Notebook", 1200.0);
+		Product p3 = new Product("Tablet", 400.0);
 		
-		cookies.remove("email");
-		cookies.put("phone", "998877006");//esse valor vai sobreescrever o valor antigo
+		stock.put(p1, 10000.0);
+		stock.put(p2, 20000.0);
+		stock.put(p3, 15000.0);
 		
-		System.out.println("Contains 'phone' key: " + cookies.containsKey("phone"));//para checar se tem ou nn
-		System.out.println("Phone number: " + cookies.get("phone"));//traz o valor da chave
-		System.out.println("Email: " + cookies.get("email"));//se o elemento n exisir, ele retorna nulo
-		System.out.println("Size: " + cookies.size());
+		Product ps = new Product("TV", 900.0);
 		
-		System.out.println("All Cookies: ");
-		for(String key : cookies.keySet()) {
-			System.out.println(key + ": " + cookies.get(key));
-		}
-		
-
-		
+		System.out.println("Contem chave 'ps': " + stock.containsKey(ps));
 	}
 
 }
