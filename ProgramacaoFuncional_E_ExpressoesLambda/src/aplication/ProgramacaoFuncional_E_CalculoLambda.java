@@ -1,25 +1,25 @@
 package aplication;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+
+import entitites.Product;
 
 public class ProgramacaoFuncional_E_CalculoLambda {
 
-	public static int globalValue = 3;//se diferenciar o valor, o comportamento vai ser diferente, ou seja, não tem transparencia referencial
-	
-	public static void main(String[] args) {//exemplo de função que não é referencialmente transparente
-
-		int[] vect = new int[] { 3, 4, 5 };//criado um vetor com os numeros
-		changeOddValues(vect);//criado função mude os valores impares
-		System.out.println(Arrays.toString(vect));//depois imprime os valores
+	public static int compareProducts(Product p1, Product p2) {//função que recebe 2 produtos
+		return p1.getPrice().compareTo(p2.getPrice());//retorna a comparação dos preços
 	}
 
-	public static void changeOddValues(int[] numbers) {//pega o vetor
-		for (int i = 0; i < numbers.length; i++) {//percorre
-			if (numbers[i] % 2 != 0) {//se o vetor na posição I verificando se for impar
-				numbers[i] += globalValue;//adiciona o global value nesse valor impar
-			}
-		}
+	public static void main(String[] args) {
 
+		List<Product> list = new ArrayList<>();
+		list.add(new Product("TV", 900.00));
+		list.add(new Product("Notebook", 1200.00));
+		list.add(new Product("Tablet", 450.00));
+		
+		list.sort(ProgramacaoFuncional_E_CalculoLambda::compareProducts);//passando a referencia para a função, para deixar ordenado por preço
+		
+		list.forEach(System.out::println);
 	}
-
 }
