@@ -30,12 +30,8 @@ public class Product {
 		this.price = price;
 	}
 	
-	public static boolean staticProductPredicate(Product p) {//Reference method com método estático, onde é feita no Products mesmo
-		return p.getPrice() >= 100.0;//com a mesma expressão lambda feita no Product Predicate
-	}
-	
-	public boolean nonStaticProductPredicate() {//metodo estático trabalha com o produto que você passar como argumento, não estatico trabalha com o objeto que está utilizando
-		return price >= 100.0;
+	public static void staticPriceUpdate(Product p) {
+		p.setPrice(p.getPrice() * 1.1);
 	}
 
 	@Override

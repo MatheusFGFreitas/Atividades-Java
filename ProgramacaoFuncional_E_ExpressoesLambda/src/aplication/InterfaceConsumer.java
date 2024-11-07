@@ -23,7 +23,9 @@ public class InterfaceConsumer {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		list.forEach(new PriceUpdate());//o for each é um defauft method que ira percorrer a coleção e ira executar um consumer para cada elemento
+		//list.forEach(new PriceUpdate());//o for each é um defauft method que ira percorrer a coleção e ira executar um consumer para cada elemento
+		
+		list.forEach(Product::staticPriceUpdate);//refereincia no proprio product
 		
 		list.forEach(System.out::println);//tenho que fazer um for each para printar cada um dos produtos na lista, o reference method
 
