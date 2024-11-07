@@ -29,6 +29,10 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	public static boolean staticProductPredicate(Product p) {//Reference method com método estático, onde é feita no Products mesmo
+		return p.getPrice() >= 100.0;//com a mesma expressão lambda feita no Product Predicate
+	}
 
 	@Override
 	public String toString() {

@@ -21,7 +21,9 @@ public class InterfacePredicate {
 		
 		//list.removeIf(p -> p.getPrice() >= 100);//essa expressão lambda também funciona
 		
-		list.removeIf(new ProductPredicate());//desse jeito é implementado pelo product predicate, uma função lambda
+		//list.removeIf(new ProductPredicate());//desse jeito é implementado pelo product predicate, uma função lambda
+		
+		list.removeIf(Product::staticProductPredicate);
 		
 		for (Product p : list) {
 			System.out.println(p);
