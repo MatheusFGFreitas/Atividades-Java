@@ -23,7 +23,9 @@ public class InterfacePredicate {
 		
 		//list.removeIf(new ProductPredicate());//desse jeito é implementado pelo product predicate, uma função lambda
 		
-		list.removeIf(Product::staticProductPredicate);
+		//list.removeIf(Product::staticProductPredicate);//desse jeito é implementado pela classe product de forma estatica
+		
+		list.removeIf(Product::nonStaticProductPredicate);//desse jeito é implementado pela classe product de forma não estatica
 		
 		for (Product p : list) {
 			System.out.println(p);
