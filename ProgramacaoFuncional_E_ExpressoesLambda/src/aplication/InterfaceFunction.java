@@ -2,10 +2,10 @@ package aplication;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entitites.Product;
-import util.UppercaseName;
 
 public class InterfaceFunction {
 
@@ -19,6 +19,8 @@ public class InterfaceFunction {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
+		Function<Product, String> func = p -> p.getName().toUpperCase();
+		
 		//para deixar todos os nomes em capslock utilizaremos a função map(não é a estrutura de dados map)
 		//map é uma função que aplica uma função a todos os elementos de uma stream
 		//stream é uma sequencia de dados, tera uma aula especifica de stream
@@ -29,7 +31,11 @@ public class InterfaceFunction {
 		//List<String> names = list.stream().map(Product::staticUppercaseName).collect(Collectors.toList());
 		//dessa vez com metodo estatico
 		
-		List<String> names = list.stream().map(Product::nonStaticUppercaseName).collect(Collectors.toList());
+		//List<String> names = list.stream().map(Product::nonStaticUppercaseName).collect(Collectors.toList());
+		//metodo não estatico
+		
+		List<String> names = list.stream().map(func).collect(Collectors.toList());
+		//expressão lambda declarada
 		
 		names.forEach(System.out::println);//feito um for each para imprimir da lista names
 
