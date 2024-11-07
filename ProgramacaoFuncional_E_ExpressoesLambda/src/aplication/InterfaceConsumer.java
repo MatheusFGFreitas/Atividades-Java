@@ -24,9 +24,9 @@ public class InterfaceConsumer {
 		list.add(new Product("HD Case", 80.90));
 		
 		double factor = 1.1;//criada uma variavel que pode ser uma variavel lida pelo usuario, para não ter que ficar alterando manualmente
-		Consumer<Product> cons = p -> {//feito uma expressão lambda declarada 
-			p.setPrice(p.getPrice() * factor);
-		};
+		//Consumer<Product> cons = p -> {//feito uma expressão lambda declarada 
+			//p.setPrice(p.getPrice() * factor);
+		//};
 		
 		
 		//list.forEach(new PriceUpdate());//o for each é um defauft method que ira percorrer a coleção e ira executar um consumer para cada elemento
@@ -35,7 +35,9 @@ public class InterfaceConsumer {
 		
 		//list.forEach(Product::nonStaticPriceUpdate);//referencia não estatica no proprio product
 		
-		list.forEach(cons);//chamando a variavel com a expressão lambda
+		//list.forEach(cons);//chamando a variavel com a expressão lambda
+		
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));//expressão lambda inline
 		
 		list.forEach(System.out::println);//tenho que fazer um for each para printar cada um dos produtos na lista, o reference method
 
