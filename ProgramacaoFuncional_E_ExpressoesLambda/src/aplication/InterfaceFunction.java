@@ -23,8 +23,11 @@ public class InterfaceFunction {
 		//map é uma função que aplica uma função a todos os elementos de uma stream
 		//stream é uma sequencia de dados, tera uma aula especifica de stream
 		
-		List<String> names = list.stream().map(new UppercaseName()).collect(Collectors.toList());
+		//List<String> names = list.stream().map(new UppercaseName()).collect(Collectors.toList());
 		//faz a lista virar uma stream, aplica a function, e transforma a stream em lista de novo
+		
+		List<String> names = list.stream().map(Product::staticUppercaseName).collect(Collectors.toList());
+		//dessa vez com metodo estatico
 		
 		names.forEach(System.out::println);//feito um for each para imprimir da lista names
 
