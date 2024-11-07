@@ -26,8 +26,10 @@ public class InterfaceFunction {
 		//List<String> names = list.stream().map(new UppercaseName()).collect(Collectors.toList());
 		//faz a lista virar uma stream, aplica a function, e transforma a stream em lista de novo
 		
-		List<String> names = list.stream().map(Product::staticUppercaseName).collect(Collectors.toList());
+		//List<String> names = list.stream().map(Product::staticUppercaseName).collect(Collectors.toList());
 		//dessa vez com metodo estatico
+		
+		List<String> names = list.stream().map(Product::nonStaticUppercaseName).collect(Collectors.toList());
 		
 		names.forEach(System.out::println);//feito um for each para imprimir da lista names
 
