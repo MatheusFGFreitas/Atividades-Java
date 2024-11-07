@@ -19,7 +19,7 @@ public class InterfaceFunction {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		Function<Product, String> func = p -> p.getName().toUpperCase();
+		//Function<Product, String> func = p -> p.getName().toUpperCase();
 		
 		//para deixar todos os nomes em capslock utilizaremos a função map(não é a estrutura de dados map)
 		//map é uma função que aplica uma função a todos os elementos de uma stream
@@ -34,8 +34,11 @@ public class InterfaceFunction {
 		//List<String> names = list.stream().map(Product::nonStaticUppercaseName).collect(Collectors.toList());
 		//metodo não estatico
 		
-		List<String> names = list.stream().map(func).collect(Collectors.toList());
+		//List<String> names = list.stream().map(func).collect(Collectors.toList());
 		//expressão lambda declarada
+		
+		List<String> names = list.stream().map(p -> p.getName().toUpperCase()).collect(Collectors.toList());
+		//expressão lambda inline
 		
 		names.forEach(System.out::println);//feito um for each para imprimir da lista names
 
