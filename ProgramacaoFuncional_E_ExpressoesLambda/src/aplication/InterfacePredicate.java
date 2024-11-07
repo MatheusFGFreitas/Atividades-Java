@@ -21,7 +21,7 @@ public class InterfacePredicate {
 		
 		double min = 100.0;
 		
-		Predicate<Product> pred = p -> p.getPrice() >= 100;//criando uma variavel predicada para o list remove, também possivel trocar o valor 100 pela variavel min, e também o usuario consegue escolher o valor da variavel, dando um controle maior
+		//Predicate<Product> pred = p -> p.getPrice() >= 100;//criando uma variavel predicada para o list remove, também possivel trocar o valor 100 pela variavel min, e também o usuario consegue escolher o valor da variavel, dando um controle maior
 		
 		//list.removeIf(p -> p.getPrice() >= 100);//essa expressão lambda também funciona
 		
@@ -31,7 +31,9 @@ public class InterfacePredicate {
 		
 		//list.removeIf(Product::nonStaticProductPredicate);//desse jeito é implementado pela classe product de forma não estatica
 		
-		list.removeIf(pred);
+		//list.removeIf(pred);
+		
+		list.removeIf(p -> p.getPrice() >= min);
 		
 		for (Product p : list) {
 			System.out.println(p);
