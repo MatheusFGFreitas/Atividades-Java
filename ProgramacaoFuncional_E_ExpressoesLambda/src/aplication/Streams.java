@@ -19,6 +19,9 @@ public class Streams {
 		Stream<Integer> st3 = Stream.iterate(0, x -> x + 2);//criada uma Steam "infinita" com o iterate, falando que o primeiro elemento da Stream é 0, e a função para os proximos elementos é x + 2
 		System.out.println(Arrays.toString(st3.limit(10).toArray()));//criado um limite de 10 itens na lista, para não ficar infinito o processo
 		
+		Stream<Long> st4 = Stream.iterate(new Long[] {0L, 1L}, p -> new Long[] {p[1] ,p[0]+p[1]}).map(p -> p[0]);//criado uma sequencia fibbonaci pela stream com um certo "macete" com o Long
+		System.out.println(Arrays.toString(st4.limit(10).toArray()));
+		
 	}
 
 }
