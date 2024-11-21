@@ -15,7 +15,10 @@ public class Streams {
 		
 		Stream<String> st2 = Stream.of("Maria", "Alex", "Bob");//criada uma stream of com os elementos já dentro da stream
 		System.out.println(Arrays.toString(st2.toArray()));
-
+		
+		Stream<Integer> st3 = Stream.iterate(0, x -> x + 2);//criada uma Steam "infinita" com o iterate, falando que o primeiro elemento da Stream é 0, e a função para os proximos elementos é x + 2
+		System.out.println(Arrays.toString(st3.limit(10).toArray()));//criado um limite de 10 itens na lista, para não ficar infinito o processo
+		
 	}
 
 }
