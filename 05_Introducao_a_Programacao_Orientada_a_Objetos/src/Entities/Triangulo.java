@@ -2,8 +2,14 @@ package Entities;
 
 public class Triangulo {
 
-	public double a;
-	public double b;
+	public double a;//o prefixo publico indica que podera ser usado em outros arquivos
+	public double b;//atributos da classe triangulo
 	public double c;
+	
+	public double area() {//trazendo o calculo do triangulo para a entidade triangulo, para deixar o codigo mais limpo
+		double p = (a + b+ c) / 2.0;
+		double result = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+		return result;
+	}
 
 }
