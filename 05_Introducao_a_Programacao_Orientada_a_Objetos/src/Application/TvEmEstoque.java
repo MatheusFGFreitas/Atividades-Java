@@ -20,9 +20,7 @@ public class TvEmEstoque {
 		System.out.print("Quantidade no estoque: ");
 		produto.quantidade = sc.nextInt();
 		
-		System.out.println(produto.nome + ", " + produto.preco + ", " + produto.quantidade);
-		
-		
+		System.out.println(produto);
 		
 		sc.close();
 
