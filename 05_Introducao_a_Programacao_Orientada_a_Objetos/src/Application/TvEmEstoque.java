@@ -20,7 +20,23 @@ public class TvEmEstoque {
 		System.out.print("Quantidade no estoque: ");
 		produto.quantidade = sc.nextInt();
 		
-		System.out.println(produto);
+		System.out.println();
+		System.out.println("dados do produto: " + produto);
+		
+		System.out.println();
+		System.out.print("Entre com o numero de produtos para ser adicionados no estoque: ");
+		int quantidade = sc.nextInt();
+		produto.addProdutos(quantidade);
+		
+		System.out.println("Dados atualizados: " + produto);
+		
+		System.out.println();
+		System.out.print("Entre com o numero de produtos para ser removido do estoque: ");
+		quantidade = sc.nextInt();
+		produto.removerProdutos(quantidade);
+		
+		System.out.println();
+		System.out.println("Dados atualizados: " + produto);
 		
 		sc.close();
 
