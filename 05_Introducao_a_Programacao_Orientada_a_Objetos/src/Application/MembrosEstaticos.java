@@ -13,18 +13,19 @@ public class MembrosEstaticos {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		Calculador calc = new Calculador();//instanciado um objeto na classe
+		//Calculador calc = new Calculador();//instanciado um objeto na classe
+		//não é necessario mais instanciar
 		
 		System.out.print("Entre o raio: ");
 		double raio = sc.nextDouble();
 		
-		double c = calc.circunferencia(raio);
+		double c = Calculador.circunferencia(raio);//colocando o nome da classe para chamar o que foi necessario
 		
-		double v = calc.volume(raio);
+		double v = Calculador.volume(raio);
 		
 		System.out.printf("Circunferencia: %.2f%n", c);
 		System.out.printf("Volume: %.2f%n", v);
-		System.out.printf("Valor de PI: %.2f%n", calc.PI);
+		System.out.printf("Valor de PI: %.2f%n", Calculador.PI);
 		
 		
 		sc.close();
