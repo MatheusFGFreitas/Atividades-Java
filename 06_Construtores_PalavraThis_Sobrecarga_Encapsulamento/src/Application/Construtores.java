@@ -19,6 +19,11 @@ public class Construtores {
 		double price = sc.nextDouble();
 		
 		Product product = new Product(name, price);//graças a isso, obrigou o usuario a colocar dados antes de criar o objeto nulo
+		
+		product.setName("Computer");//colocando o nome em vez de TV para Computer
+		System.out.println("Updated name: " + product.getName());//puxando o nome que está no atributo nome
+		product.setPrice(1200.00);
+		System.out.println("Updated price: " + product.getPrice());
 
 		System.out.println();
 		System.out.println("Product data: " + product);
