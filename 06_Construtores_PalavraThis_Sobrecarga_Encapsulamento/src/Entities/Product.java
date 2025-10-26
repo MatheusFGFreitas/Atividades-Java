@@ -12,6 +12,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 	
+	public Product(String name, double price) {//sobrecarga é disponibilizar mais de uma versão da mesma operação, a diferença é a lista de parametros
+		this.name = name;
+		this.price = price;
+	}
+	
 	public double totalValueInStock() {
 	return price * quantity;
 	}

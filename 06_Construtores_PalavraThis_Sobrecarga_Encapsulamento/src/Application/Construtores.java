@@ -17,16 +17,14 @@ public class Construtores {
 		String name = sc.nextLine();
 		System.out.print("Price: ");
 		double price = sc.nextDouble();
-		System.out.print("Quantity in stock: ");
-		int quantity = sc.nextInt();
 		
-		Product product = new Product(name, price, quantity);//graças a isso, obrigou o usuario a colocar dados antes de criar o objeto nulo
+		Product product = new Product(name, price);//graças a isso, obrigou o usuario a colocar dados antes de criar o objeto nulo
 
 		System.out.println();
 		System.out.println("Product data: " + product);
 		System.out.println();
 		System.out.print("Enter the number of products to be added in stock: ");
-		quantity = sc.nextInt();
+		int quantity = sc.nextInt();
 		product.addProducts(quantity);
 
 		System.out.println();
