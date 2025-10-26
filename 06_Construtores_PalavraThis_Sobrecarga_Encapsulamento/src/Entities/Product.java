@@ -7,7 +7,7 @@ public class Product {
 	public int quantity;
 	
 	public Product(String name, double price, int quantity) {//obrigando o usuario a instanciar o nome preço e quantidade para não ficar nulo
-		this.name = name;
+		this.name = name;//this serve pra diferenciar o atributo do objeto do parametro do construtor, ou seja, está referenciando o objeto
 		this.price = price;
 		this.quantity = quantity;
 	}
